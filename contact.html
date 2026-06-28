@@ -1,1 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact | Kinetic Motion Studio</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Contact</h1>
+<form id="bookingForm">
+<input type="hidden" name="access_key" value="a49f00fb-16d6-4e0e-9378-0ff3642b7120">
+<input type="hidden" name="subject" value="New Booking Request - Kinetic Motion Studio">
+<input type="hidden" name="from_name" value="Kinetic Motion Studio Website">
+<input type="checkbox" name="botcheck" style="display:none">
 
+<p><input id="clientName" name="name" placeholder="Your name" required></p>
+<p><input id="clientContact" name="contact" placeholder="Phone or email" required></p>
+<p>
+<select id="clientGoal" name="service">
+<option>Back pain</option>
+<option>Clinical Pilates</option>
+<option>Sports injury rehabilitation</option>
+<option>Post-surgery rehabilitation</option>
+<option>Posture / desk pain</option>
+<option>Mobility and flexibility</option>
+</select>
+</p>
+<p><textarea id="clientMessage" name="message" placeholder="Message"></textarea></p>
+
+<button id="submitBtn" type="submit">Send booking request</button>
+<button id="whatsappBtn" type="button">Send via WhatsApp</button>
+<p id="formResult"></p>
+</form>
+
+<script>
+const form=document.getElementById("bookingForm");
+const btn=document.getElementById("submitBtn");
+const result=document.getElementById("formResult");
+form.addEventListener("submit",async(e)=>{
+e.preventDefault();
+btn.disabled=true;
+btn.textContent="Sending...";
+const fd=new FormData(form);
+try{
+const r=await fetch("https://api.web3forms.com/submit",{method:"POST",body:fd});
+const d=await r.json();
+if(d.success){
+result.style.color="green";
+result.textContent="Thank you. Your request has been sent successfully.";
+form.reset();
+}else{
+result.style.color="red";
+result.textContent="Submission failed.";
+}
+}catch(err){
+result.style.color="red";
+result.textContent="Connection error.";
+}
+btn.disabled=false;
+btn.textContent="Send booking request";
+});
+
+document.getElementById("whatsappBtn").addEventListener("click",()=>{
+const t=`Booking enquiry - Kinetic Motion Studio
+
+Name: ${clientName.value}
+Contact: ${clientContact.value}
+Goal: ${clientGoal.value}
+Message: ${clientMessage.value}`;
+window.open("https://wa.me/447770331186?text="+encodeURIComponent(t),"_blank");
+});
+</script>
+</body>
+</html>
