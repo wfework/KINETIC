@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+<title>Kinetic Motion Studio logo mark</title><desc>Luxury KM monogram with movement and spine motif.</desc>
+<defs>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d352f"/><stop offset="1" stop-color="#174a42"/></linearGradient>
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c79a4b"/><stop offset="1" stop-color="#8a6239"/></linearGradient>
+</defs>
+<rect x="22" y="22" width="468" height="468" rx="112" fill="url(#g)"/>
+<rect x="38" y="38" width="436" height="436" rx="96" fill="none" stroke="#e6dccf" stroke-opacity=".35" stroke-width="4"/>
+<path d="M151 352V160h42v82l82-82h52l-91 91 98 101h-56l-85-90v90h-42z" fill="#fff8ee"/>
+<path d="M327 352V160h35l62 109 62-109h34v192h-40V240l-55 96h-7l-55-96v112h-36z" fill="#fff8ee" transform="translate(-62 0)"/>
+<path d="M281 128c23 22 19 52-5 70-20 15-34 33-39 57-5 27 3 56 29 88" fill="none" stroke="#fff8ee" stroke-width="13" stroke-linecap="round"/>
+<circle cx="300" cy="105" r="22" fill="#fff8ee"/>
+<path d="M278 141c-20 18-43 24-70 20" fill="none" stroke="#fff8ee" stroke-width="12" stroke-linecap="round"/>
+<path d="M291 150c18 16 38 24 61 22" fill="none" stroke="#fff8ee" stroke-width="12" stroke-linecap="round"/>
+<g fill="url(#gold)"><circle cx="275" cy="190" r="8"/><circle cx="268" cy="215" r="7.5"/><circle cx="263" cy="240" r="7"/><circle cx="262" cy="265" r="6.5"/><circle cx="266" cy="290" r="6"/><circle cx="274" cy="315" r="5.5"/><circle cx="286" cy="339" r="5"/></g>
+</svg>
